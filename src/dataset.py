@@ -39,7 +39,7 @@ class SwAVDataset(Dataset):
         """
         Extrai patches usando unfold para divisões com ou sem sobreposição.
         """
-        b, h, w = data.shape
+        # b, h, w = data.shape
         patches = data.unfold(1, patch_size, patch_stride).unfold(2, patch_size, patch_stride)
         patches = patches.contiguous().view(-1, patch_size, patch_size)
 

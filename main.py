@@ -1,5 +1,6 @@
 #%%
 
+import argparse
 import os
 import yaml
 import numpy as np
@@ -8,15 +9,15 @@ import torch
 from torch.utils.data import DataLoader
 from lightly.loss import SwaVLoss
 
-from model import SwaV, swav_train
-from transform import SwaVTransform
-from dataset import SwAVDataset
+from src.model import SwaV, swav_train
+from src.transform import SwaVTransform
+from src.dataset import SwAVDataset
 
 # Define the main function
 def main(fname):
 
     ########################### Config ###########################
-    with open(fname, 'r') as y_file:
+    with open(os.path.join('configs',fname), 'r') as y_file:
         params = yaml.load(y_file, Loader=yaml.FullLoader)
 
     data_params = params['data']
@@ -35,11 +36,11 @@ def main(fname):
     print('Loading images dataset into RAM')
     dataset = SwAVDataset(
         imgs_path,
-        patch_size=training_params['patch_size'],
-        patch_stride=training_params['patch_stride'],
-        low_info_thresh=training_params['low_info_thresh'],
-        adjust_scale=training_params['adjust_scale'],
-        filter_data=training_params['filter_data']
+        patch_size=data_params['patch_size'],
+        patch_stride=data_params['patch_stride'],
+        low_info_thresh=data_params['low_info_thresh'],
+        adjust_scale=data_params['adjust_scale'],
+        filter_data=data_params['filter_data']
     )
     print(f'Total images: {len(dataset)}')
     log_file.write(f'Total images: {len(dataset)}\n')
@@ -60,7 +61,7 @@ def main(fname):
     log_file.write(f"ln(proto): {ln_proto}\n")
 
     model = SwaV(
-        ['backbone_model'],
+        training_params['backbone_model'],
         data_params['patch_size'],
         data_params['n_hr_views'],
         training_params['n_prototypes'],
@@ -87,4 +88,16 @@ def main(fname):
 
 # Entry point
 if __name__ == '__main__':
-    main()
+
+    # parser = argparse.ArgumentParser(description="Run SwaV training.")
+    # parser.add_argument('fname', type=str, help="Path to the YAML configuration file.")
+    # args = parser.parse_args()
+
+    # fname = args.fname
+    fname="modelv2_test.yaml"
+    os.chdir("swav")
+
+    main(fname)
+
+
+# %%
