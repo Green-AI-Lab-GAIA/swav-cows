@@ -34,6 +34,7 @@ def main(fname):
         yaml.dump(params, f)
 
     print('Loading images dataset into RAM')
+    
     dataset = SwAVDataset(
         imgs_path,
         patch_size=data_params['patch_size'],
@@ -42,17 +43,18 @@ def main(fname):
         adjust_scale=data_params['adjust_scale'],
         filter_data=data_params['filter_data']
     )
+    
     print(f'Total images: {len(dataset)}')
     log_file.write(f'Total images: {len(dataset)}\n')
 
     dataloader = DataLoader(dataset, batch_size=training_params['batch_size'], shuffle=True, drop_last=True)
-    mosaic_normalize = {'mean': [dataset.corrected_mean], 'std': [dataset.corrected_std]}
+    
     transform = SwaVTransform(
         crop_sizes=data_params['crop_sizes'],
         crop_min_scales=data_params['min_scales'],
         crop_max_scales=data_params['max_scales'],
         crop_counts=(data_params['n_hr_views'], data_params['n_lr_views']),
-        normalize=mosaic_normalize
+        normalize={'mean': [dataset.corrected_mean], 'std': [dataset.corrected_std]}
     )
 
     ########################### Model ###########################
@@ -70,7 +72,9 @@ def main(fname):
     ).to(training_params['device'])
 
     if training_params['weights_file_name'] is not None:
+        
         weights_path = os.path.join(checkpoint_folder, training_params['weights_file_name'])
+        
         try:
             model.load_state_dict(torch.load(weights_path, weights_only=True))
         except:
@@ -84,18 +88,18 @@ def main(fname):
 
     ########################### Training ###########################
     swav_train(model, dataset, dataloader, transform, criterion, optimizer, params, checkpoint_folder, log_file)
+    
     log_file.close()
+
 
 # Entry point
 if __name__ == '__main__':
 
-    # parser = argparse.ArgumentParser(description="Run SwaV training.")
-    # parser.add_argument('fname', type=str, help="Path to the YAML configuration file.")
-    # args = parser.parse_args()
+    parser = argparse.ArgumentParser(description="Run SwaV training.")
+    parser.add_argument('fname', type=str, help="Path to the YAML configuration file.")
+    args = parser.parse_args()
 
-    # fname = args.fname
-    fname="modelv2_test.yaml"
-    os.chdir("swav")
+    fname = args.fname
 
     main(fname)
 

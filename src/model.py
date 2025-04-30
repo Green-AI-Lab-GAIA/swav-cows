@@ -25,6 +25,7 @@ class SwaV(nn.Module):
             hidden_dim=n_features_backbone, # arbitrary hidden dim, setting as the same as backbone
             output_dim=n_features_swav
         )
+        
         self.prototypes = SwaVPrototypes(
             input_dim=n_features_swav, 
             n_prototypes=n_prototypes, 
@@ -32,6 +33,7 @@ class SwaV(nn.Module):
         )
 
         self.start_queue_at_epoch = 2
+        
         self.queues = nn.ModuleList(
             [MemoryBankModule(size=(3840, n_features_swav)) for _ in range(n_hr_views)]
         )

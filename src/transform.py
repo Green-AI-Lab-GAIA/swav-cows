@@ -8,54 +8,6 @@ from torch import nn, Tensor
 import torchvision.transforms as T
 from torch.utils.data import Dataset, DataLoader
 
-class CopyTransform(nn.Module):
-
-    def __init__(self, n_copies=5):
-        super().__init__()
-
-        self.n_copies = n_copies
-        self.copy = T.Compose([
-            T.RandomHorizontalFlip(),
-            T.RandomVerticalFlip()
-        ])
-
-    def forward(self, img: Tensor):
-        width, height = img.shape
-        half_width, half_height = int(width // 2), int(height // 2)
-
-        original_img = img.clone()
-        for _ in range(self.n_copies):
-            img_copy = self.copy(original_img)
-            empty_pixels = torch.all(img == 0, dim=0)
-            if not torch.any(empty_pixels):
-                return img
-            
-            # Random generate center
-            indexes = torch.where(empty_pixels)
-            x_ind = torch.randint(0, indexes[0].shape[0], (1,))
-            y_ind = torch.randint(0, indexes[1].shape[0], (1,))
-            x, y = indexes[0][x_ind], indexes[1][y_ind]
-            
-            # Find original image boundaries
-            x0, y0 = max(0, x - half_width), max(0, y - half_height)
-            x1, y1 = min(width, x + half_width), min(height, y + half_height)
-            
-            # Find copy boundaries
-            dx, dy = x1 - x0, y1 - y0
-            img_copy = img_copy[
-                :,
-                half_width - dx//2:half_width + dx//2 + dx%2,
-                half_height - dy//2:half_height + dy//2 + dy%2
-            ]
-
-            img[:, x0:x1, y0:y1] = torch.where(
-                empty_pixels[x0:x1, y0:y1],
-                img_copy,
-                img[:, x0:x1, y0:y1]
-            )
-
-        return img
-
 class MultiViewTransform:
     def __init__(self, transforms: Sequence[T.Compose]):
         self.transforms = transforms
