@@ -43,6 +43,8 @@ class MultiCropTranform(MultiViewTransform):
             )
         super().__init__(crop_transforms)
 
+
+
 class SwaVTransform(MultiCropTranform):
     def __init__(
         self,
@@ -51,11 +53,14 @@ class SwaVTransform(MultiCropTranform):
         crop_min_scales: Tuple[float, float] = (0.8, 0.2),
         crop_max_scales: Tuple[float, float] = (1.0, 0.5),
 
-        normalize: Union[None, Dict[str, List[float]]] = None,
+        # normalize: Union[None, Dict[str, List[float]]] = None,
     ):
 
         transforms = T.Compose([
-            T.Normalize(mean=normalize['mean'], std=normalize['std'])
+            # T.Normalize(mean=normalize['mean'], std=normalize['std']),
+            T.RandomHorizontalFlip(),
+            #rotate
+            T.RandomRotation(degrees=30),
             ])
 
         super().__init__(

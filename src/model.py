@@ -7,7 +7,8 @@ from lightly.models.modules import SwaVProjectionHead, SwaVPrototypes
 from lightly.models.modules.memory_bank import MemoryBankModule
     
 class SwaV(nn.Module):
-    def __init__(self, backbone_model='resnet50',
+    def __init__(self, 
+                 backbone_model='resnet50',
                 input_size=11,
                 n_hr_views=2, n_prototypes=60,
                 n_features_swav=128, batch_size=64):
@@ -16,7 +17,7 @@ class SwaV(nn.Module):
         backbone = self.resnet_backbone(backbone_model)
 
         with torch.no_grad():
-            n_features_backbone = backbone(torch.randn(batch_size, 1, input_size, input_size)).shape[1]
+            n_features_backbone = backbone(torch.randn(batch_size, 1, input_size[0], input_size[1])).shape[1]
 
         self.backbone = backbone
 
@@ -123,7 +124,7 @@ class SwaV(nn.Module):
         return queue_prototypes
 
 
-def swav_train(model,dataset,  dataloader, transform, criterion, optimizer, params, checkpoint_folder, log_file):
+def swav_train(model,  dataloader, transform, criterion, optimizer, params, checkpoint_folder, log_file):
     patience, epoch = 0, 0
     min_loss = np.inf
     training_params = params['training']
@@ -133,14 +134,8 @@ def swav_train(model,dataset,  dataloader, transform, criterion, optimizer, para
     while True:
         total_loss = 0
         for batch in dataloader:
-            batch = torch.concat(
-                [
-                    batch[i].view(1, 1, data_params['patch_size'], data_params['patch_size'])
-                    for i in range(batch.shape[0])
-                ],
-                dim=0
-            ).to(training_params['device'])
-            views = transform(batch / dataset.max_value)
+            batch = batch.to(training_params['device'])
+            views = transform(batch)
             high_resolution, low_resolution = views[:data_params['n_hr_views']], views[data_params['n_hr_views']:]
 
             high_resolution, low_resolution, queue = model(

@@ -1,6 +1,39 @@
 import numpy as np
 import torch
 from torch.utils.data import Dataset
+import os
+
+
+class NumpyDataset(Dataset):
+    def __init__(self, root_dir, transform=None):
+        # Get list of .npy file paths
+        self.file_paths = [os.path.join(root_dir, f) for f in os.listdir(root_dir) if f.endswith(".npy")]
+        self.transform = transform
+
+    def __len__(self):
+        return len(self.file_paths)
+
+    def __getitem__(self, idx):
+        file_path = self.file_paths[idx]
+        # Load the .npy file as a NumPy array
+        image = np.load(file_path).astype(np.float32)  # Ensure it's float32 for PyTorch compatibility
+        
+        # If grayscale but missing channel dimension, add (C, H, W) format
+        if image.ndim == 2:  
+            image = np.expand_dims(image, axis=0)  # Convert (H, W) → (1, H, W)
+        
+        # Convert NumPy array to PyTorch tensor
+        image = torch.from_numpy(image)
+        # normalize to [0,1]
+        image = image / torch.max(image)
+
+
+        # Apply transformation if provided
+        if self.transform:
+            image = self.transform(image)
+
+        return image
+
 
 
 class SwAVDataset(Dataset):
