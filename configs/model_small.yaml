@@ -10,12 +10,12 @@ data:
 training:
   device: 'cuda'
   backbone_model: 'resnet18'  
-  n_features_swav: 128
+  n_features_swav: 32
   batch_size: 128
-  n_prototypes: 10
+  n_prototypes: 5
   learning_rate: 0.0001
   sinkhorn_epsilon: 0.03
   max_patience: 30
-  min_epochs: 700
+  min_epochs: 500
   checkpoints_file_path: ./checkpoints/
-  weights_file_name: epoch_158.pth
+  weights_file_name: null

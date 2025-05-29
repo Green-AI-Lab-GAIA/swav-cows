@@ -1,1 +1,300 @@
 nohup: ignoring input
+Total images: 16556
+############# ln(proto): 2.30259 #############
+Starting Training
+epoch: 0001, loss: 0.05463 (*)
+epoch: 0002, loss: 0.04973 (*)
+epoch: 0003, loss: 0.05071
+epoch: 0004, loss: 0.05144
+epoch: 0005, loss: 0.05309
+epoch: 0006, loss: 0.05399
+epoch: 0007, loss: 0.05124
+epoch: 0008, loss: 0.05030
+epoch: 0009, loss: 0.05001
+epoch: 0010, loss: 0.05332
+epoch: 0011, loss: 0.04800 (*)
+epoch: 0012, loss: 0.04981
+epoch: 0013, loss: 0.04888
+epoch: 0014, loss: 0.05032
+epoch: 0015, loss: 0.05111
+epoch: 0016, loss: 0.05064
+epoch: 0017, loss: 0.05337
+epoch: 0018, loss: 0.04753 (*)
+epoch: 0019, loss: 0.05157
+epoch: 0020, loss: 0.04975
+epoch: 0021, loss: 0.04864
+epoch: 0022, loss: 0.05262
+epoch: 0023, loss: 0.04796
+epoch: 0024, loss: 0.05084
+epoch: 0025, loss: 0.04633 (*)
+epoch: 0026, loss: 0.05113
+epoch: 0027, loss: 0.04949
+epoch: 0028, loss: 0.05108
+epoch: 0029, loss: 0.05124
+epoch: 0030, loss: 0.05004
+epoch: 0031, loss: 0.04692
+epoch: 0032, loss: 0.04627 (*)
+epoch: 0033, loss: 0.04787
+epoch: 0034, loss: 0.04706
+epoch: 0035, loss: 0.04884
+epoch: 0036, loss: 0.04517 (*)
+epoch: 0037, loss: 0.04566
+epoch: 0038, loss: 0.04844
+epoch: 0039, loss: 0.04629
+epoch: 0040, loss: 0.04309 (*)
+epoch: 0041, loss: 0.04837
+epoch: 0042, loss: 0.04423
+epoch: 0043, loss: 0.04487
+epoch: 0044, loss: 0.04633
+epoch: 0045, loss: 0.04600
+epoch: 0046, loss: 0.04717
+epoch: 0047, loss: 0.04159 (*)
+epoch: 0048, loss: 0.04224
+epoch: 0049, loss: 0.04356
+epoch: 0050, loss: 0.04727
+epoch: 0051, loss: 0.04367
+epoch: 0052, loss: 0.04269
+epoch: 0053, loss: 0.04303
+epoch: 0054, loss: 0.04519
+epoch: 0055, loss: 0.04244
+epoch: 0056, loss: 0.04327
+epoch: 0057, loss: 0.04317
+epoch: 0058, loss: 0.04276
+epoch: 0059, loss: 0.04347
+epoch: 0060, loss: 0.04210
+epoch: 0061, loss: 0.04160
+epoch: 0062, loss: 0.04296
+epoch: 0063, loss: 0.04118 (*)
+epoch: 0064, loss: 0.03936 (*)
+epoch: 0065, loss: 0.04474
+epoch: 0066, loss: 0.04673
+epoch: 0067, loss: 0.03988
+epoch: 0068, loss: 0.04380
+epoch: 0069, loss: 0.04358
+epoch: 0070, loss: 0.04240
+epoch: 0071, loss: 0.04545
+epoch: 0072, loss: 0.04164
+epoch: 0073, loss: 0.04229
+epoch: 0074, loss: 0.04414
+epoch: 0075, loss: 0.04026
+epoch: 0076, loss: 0.03757 (*)
+epoch: 0077, loss: 0.03934
+epoch: 0078, loss: 0.04446
+epoch: 0079, loss: 0.03818
+epoch: 0080, loss: 0.04270
+epoch: 0081, loss: 0.04113
+epoch: 0082, loss: 0.03995
+epoch: 0083, loss: 0.03977
+epoch: 0084, loss: 0.04370
+epoch: 0085, loss: 0.03977
+epoch: 0086, loss: 0.03900
+epoch: 0087, loss: 0.04102
+epoch: 0088, loss: 0.04127
+epoch: 0089, loss: 0.03940
+epoch: 0090, loss: 0.04470
+epoch: 0091, loss: 0.04102
+epoch: 0092, loss: 0.04166
+epoch: 0093, loss: 0.04270
+epoch: 0094, loss: 0.04402
+epoch: 0095, loss: 0.04276
+epoch: 0096, loss: 0.04295
+epoch: 0097, loss: 0.04145
+epoch: 0098, loss: 0.04504
+epoch: 0099, loss: 0.04032
+epoch: 0100, loss: 0.04472
+epoch: 0101, loss: 0.04431
+epoch: 0102, loss: 0.03891
+epoch: 0103, loss: 0.03993
+epoch: 0104, loss: 0.04330
+epoch: 0105, loss: 0.04433
+epoch: 0106, loss: 0.04096
+epoch: 0107, loss: 0.04113
+epoch: 0108, loss: 0.04171
+epoch: 0109, loss: 0.04220
+epoch: 0110, loss: 0.03879
+epoch: 0111, loss: 0.04253
+epoch: 0112, loss: 0.04016
+epoch: 0113, loss: 0.04495
+epoch: 0114, loss: 0.04035
+epoch: 0115, loss: 0.03953
+epoch: 0116, loss: 0.04248
+epoch: 0117, loss: 0.04367
+epoch: 0118, loss: 0.03821
+epoch: 0119, loss: 0.04168
+epoch: 0120, loss: 0.04038
+epoch: 0121, loss: 0.03813
+epoch: 0122, loss: 0.03880
+epoch: 0123, loss: 0.04011
+epoch: 0124, loss: 0.04378
+epoch: 0125, loss: 0.04269
+epoch: 0126, loss: 0.03836
+epoch: 0127, loss: 0.03775
+epoch: 0128, loss: 0.04010
+epoch: 0129, loss: 0.03978
+epoch: 0130, loss: 0.03721 (*)
+epoch: 0131, loss: 0.04345
+epoch: 0132, loss: 0.03919
+epoch: 0133, loss: 0.04292
+epoch: 0134, loss: 0.04087
+epoch: 0135, loss: 0.04025
+epoch: 0136, loss: 0.03880
+epoch: 0137, loss: 0.04035
+epoch: 0138, loss: 0.03615 (*)
+epoch: 0139, loss: 0.03747
+epoch: 0140, loss: 0.03491 (*)
+epoch: 0141, loss: 0.03638
+epoch: 0142, loss: 0.03883
+epoch: 0143, loss: 0.03798
+epoch: 0144, loss: 0.03775
+epoch: 0145, loss: 0.03813
+epoch: 0146, loss: 0.03756
+epoch: 0147, loss: 0.03754
+epoch: 0148, loss: 0.03938
+epoch: 0149, loss: 0.04019
+epoch: 0150, loss: 0.03913
+epoch: 0151, loss: 0.03815
+epoch: 0152, loss: 0.03924
+epoch: 0153, loss: 0.04291
+epoch: 0154, loss: 0.03947
+epoch: 0155, loss: 0.03953
+epoch: 0156, loss: 0.03605
+epoch: 0157, loss: 0.03694
+epoch: 0158, loss: 0.03573
+epoch: 0159, loss: 0.03662
+epoch: 0160, loss: 0.03712
+epoch: 0161, loss: 0.04029
+epoch: 0162, loss: 0.03546
+epoch: 0163, loss: 0.03867
+epoch: 0164, loss: 0.03522
+epoch: 0165, loss: 0.03590
+epoch: 0166, loss: 0.03707
+epoch: 0167, loss: 0.03472 (*)
+epoch: 0168, loss: 0.03801
+epoch: 0169, loss: 0.03586
+epoch: 0170, loss: 0.03567
+epoch: 0171, loss: 0.03431 (*)
+epoch: 0172, loss: 0.03505
+epoch: 0173, loss: 0.03240 (*)
+epoch: 0174, loss: 0.03357
+epoch: 0175, loss: 0.03631
+epoch: 0176, loss: 0.03720
+epoch: 0177, loss: 0.03665
+epoch: 0178, loss: 0.03551
+epoch: 0179, loss: 0.03619
+epoch: 0180, loss: 0.03859
+epoch: 0181, loss: 0.03518
+epoch: 0182, loss: 0.03718
+epoch: 0183, loss: 0.03448
+epoch: 0184, loss: 0.03567
+epoch: 0185, loss: 0.03552
+epoch: 0186, loss: 0.03271
+epoch: 0187, loss: 0.03528
+epoch: 0188, loss: 0.03585
+epoch: 0189, loss: 0.03151 (*)
+epoch: 0190, loss: 0.03632
+epoch: 0191, loss: 0.03679
+epoch: 0192, loss: 0.03913
+epoch: 0193, loss: 0.03572
+epoch: 0194, loss: 0.03366
+epoch: 0195, loss: 0.03784
+epoch: 0196, loss: 0.03634
+epoch: 0197, loss: 0.03655
+epoch: 0198, loss: 0.03320
+epoch: 0199, loss: 0.03286
+epoch: 0200, loss: 0.03422
+epoch: 0201, loss: 0.03733
+epoch: 0202, loss: 0.03292
+epoch: 0203, loss: 0.03193
+epoch: 0204, loss: 0.03339
+epoch: 0205, loss: 0.03408
+epoch: 0206, loss: 0.03281
+epoch: 0207, loss: 0.03357
+epoch: 0208, loss: 0.03222
+epoch: 0209, loss: 0.03180
+epoch: 0210, loss: 0.03068 (*)
+epoch: 0211, loss: 0.02990 (*)
+epoch: 0212, loss: 0.03083
+epoch: 0213, loss: 0.03289
+epoch: 0214, loss: 0.03086
+epoch: 0215, loss: 0.03114
+epoch: 0216, loss: 0.02837 (*)
+epoch: 0217, loss: 0.03412
+epoch: 0218, loss: 0.03094
+epoch: 0219, loss: 0.02719 (*)
+epoch: 0220, loss: 0.02963
+epoch: 0221, loss: 0.02876
+epoch: 0222, loss: 0.02919
+epoch: 0223, loss: 0.02842
+epoch: 0224, loss: 0.03579
+epoch: 0225, loss: 0.02746
+epoch: 0226, loss: 0.02980
+epoch: 0227, loss: 0.02833
+epoch: 0228, loss: 0.02933
+epoch: 0229, loss: 0.02859
+epoch: 0230, loss: 0.03113
+epoch: 0231, loss: 0.02949
+epoch: 0232, loss: 0.02964
+epoch: 0233, loss: 0.02890
+epoch: 0234, loss: 0.02934
+epoch: 0235, loss: 0.03105
+epoch: 0236, loss: 0.03035
+epoch: 0237, loss: 0.03203
+epoch: 0238, loss: 0.02836
+epoch: 0239, loss: 0.03064
+epoch: 0240, loss: 0.02893
+epoch: 0241, loss: 0.02855
+epoch: 0242, loss: 0.02761
+epoch: 0243, loss: 0.03268
+epoch: 0244, loss: 0.03090
+epoch: 0245, loss: 0.02989
+epoch: 0246, loss: 0.02976
+epoch: 0247, loss: 0.02994
+epoch: 0248, loss: 0.03035
+epoch: 0249, loss: 0.02941
+epoch: 0250, loss: 0.02902
+epoch: 0251, loss: 0.03018
+epoch: 0252, loss: 0.02814
+epoch: 0253, loss: 0.02871
+epoch: 0254, loss: 0.03026
+epoch: 0255, loss: 0.02807
+epoch: 0256, loss: 0.02629 (*)
+epoch: 0257, loss: 0.03000
+epoch: 0258, loss: 0.03075
+epoch: 0259, loss: 0.03094
+epoch: 0260, loss: 0.02919
+epoch: 0261, loss: 0.02700
+epoch: 0262, loss: 0.02883
+epoch: 0263, loss: 0.03075
+epoch: 0264, loss: 0.02600 (*)
+epoch: 0265, loss: 0.02744
+epoch: 0266, loss: 0.02822
+epoch: 0267, loss: 0.02933
+epoch: 0268, loss: 0.03097
+epoch: 0269, loss: 0.03040
+epoch: 0270, loss: 0.02974
+epoch: 0271, loss: 0.02529 (*)
+epoch: 0272, loss: 0.02537
+epoch: 0273, loss: 0.02664
+epoch: 0274, loss: 0.02763
+epoch: 0275, loss: 0.02682
+epoch: 0276, loss: 0.02780
+epoch: 0277, loss: 0.02614
+epoch: 0278, loss: 0.02558
+epoch: 0279, loss: 0.02537
+epoch: 0280, loss: 0.02643
+epoch: 0281, loss: 0.02608
+epoch: 0282, loss: 0.02384 (*)
+epoch: 0283, loss: 0.02948
+epoch: 0284, loss: 0.02628
+epoch: 0285, loss: 0.02548
+epoch: 0286, loss: 0.02527
+epoch: 0287, loss: 0.02473
+epoch: 0288, loss: 0.02569
+epoch: 0289, loss: 0.02602
+epoch: 0290, loss: 0.02808
+epoch: 0291, loss: 0.02790
+epoch: 0292, loss: 0.02621
+epoch: 0293, loss: 0.02956
+epoch: 0294, loss: 0.02551
+epoch: 0295, loss: 0.02409
+epoch: 0296, loss: 0.02338 (*)
