@@ -58,9 +58,10 @@ class SwaVTransform(MultiCropTranform):
 
         transforms = T.Compose([
             # T.Normalize(mean=normalize['mean'], std=normalize['std']),
+            T.RandomVerticalFlip(),
             T.RandomHorizontalFlip(),
             #rotate
-            T.RandomRotation(degrees=30),
+            T.RandomRotation(degrees=15),
             ])
 
         super().__init__(

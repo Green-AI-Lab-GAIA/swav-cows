@@ -2,6 +2,7 @@ import numpy as np
 import torch
 from torch import nn
 import torchvision
+from tqdm import tqdm
 
 from lightly.models.modules import SwaVProjectionHead, SwaVPrototypes
 from lightly.models.modules.memory_bank import MemoryBankModule
@@ -133,6 +134,9 @@ def swav_train(model,  dataloader, transform, criterion, optimizer, params, chec
     print(f'Starting Training')
     while True:
         total_loss = 0
+        
+
+    
         for batch in dataloader:
             batch = batch.to(training_params['device'])
             views = transform(batch)
@@ -158,10 +162,10 @@ def swav_train(model,  dataloader, transform, criterion, optimizer, params, chec
             loss_print += ' (*)'
             patience = 0
             torch.save(model.state_dict(), f'{checkpoint_folder}/minloss.pth')
-        
+
         if (epoch % 100) == 0:
             torch.save(model.state_dict(), f'{checkpoint_folder}/epoch_{epoch}.pth')
-        
+
         print(loss_print)
         log_file.write(loss_print + "\n")
 

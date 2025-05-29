@@ -26,7 +26,7 @@ def main(fname):
     ########################### Data ###########################
     imgs_path = os.path.join( data_params['root_dir'])
 
-    checkpoint_folder = f"{data_params['root_dir']}_{training_params['n_prototypes']}proto"
+    checkpoint_folder = f"{data_params['root_dir']}{training_params['n_prototypes']}proto"
     checkpoint_folder = os.path.join(training_params['checkpoints_file_path'], checkpoint_folder)
     os.makedirs(checkpoint_folder, exist_ok=True)
 
