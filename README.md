@@ -38,6 +38,18 @@ To run the SWAV project, you need to install the following Python packages:
 pip install -r requirements.txt
 ```
 
+## Some results
+
+In the image below, you can see how the model is grouping the images in the cluster space. The model is grouping by the size of the animals, which is a good indicator that the model is learning something useful. 
+
+![Cluster Space](./plots/output.png)
+
+
+## Tips about the hyperparameters
+
+- **n_prototypes**: This parameter defines the number of prototypes used in the model. In the test, lower values (e.g., 10) lead to better results.
+
+- **n_features_swav**: Is the latent space size of the model. Lower values (e.g., 32) can regularize the model and protect it from overfitting, especially when the dataset is small.
 
 
 
