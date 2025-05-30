@@ -1,5 +1,5 @@
 data:
-  root_dir: ./data/normalized_dataset/
+  root_dir: ./normalized_dataset/
   n_hr_views: 2
   n_lr_views: 0
   crop_sizes: 
@@ -16,6 +16,6 @@ training:
   learning_rate: 0.0001
   sinkhorn_epsilon: 0.03
   max_patience: 30
-  min_epochs: 500
+  min_epochs: 300
   checkpoints_file_path: ./checkpoints/
   weights_file_name: null
